@@ -37,8 +37,8 @@ Ce projet implémente une API REST sécurisée permettant de gérer des utilisat
 
 1. Clonez le dépôt :
    ```bash
-   git clone https://github.com/votre-nom/gestion-utilisateurs-api.git
-   cd gestion-utilisateurs-api
+   git clone https://github.com/JAAFOURAMouez/mini-auth-system.git
+   cd mini-auth-system
    ```
 
 2. Construisez et lancez l'application avec Gradle :
@@ -75,7 +75,7 @@ curl -X POST http://localhost:8080/api/auth/login \
 
 ```bash
 curl -X GET http://localhost:8080/api/users/profile \
-  -H "Authorization: Bearer VOTRE_TOKEN_JWT"
+  -H "Authorization: Bearer TOKEN_JWT"
 ```
 
 ### 4. Créer un administrateur
@@ -152,13 +152,6 @@ Pour exécuter les tests :
 - L'authentification utilise JWT avec l'algorithme HS512
 - Les autorisations sont basées sur les rôles (ROLE_USER, ROLE_ADMIN)
 - Accès restreint aux endpoints selon les rôles
-
-## Améliorations possibles
-
-- Ajouter une validation des données d'entrée
-- Implémenter un système de rafraîchissement des tokens
-- Ajouter plus de tests (tests d'intégration, tests des contrôleurs)
-- Ajouter une documentation OpenAPI/Swagger
 
 ---
 
