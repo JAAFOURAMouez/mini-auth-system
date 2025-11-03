@@ -42,10 +42,10 @@ class UserServiceTest {
 
         // Initialisation des rôles
         userRole = new Role("ROLE_USER");
-        userRole.setId(1L);
+        userRole.setId(2L);
         
         adminRole = new Role("ROLE_ADMIN");
-        adminRole.setId(2L);
+        adminRole.setId(1L);
 
         // Initialisation d'un utilisateur de test
         testUser = new User();
