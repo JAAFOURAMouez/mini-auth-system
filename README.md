@@ -30,20 +30,27 @@ Ce projet implémente une API REST sécurisée permettant de gérer des utilisat
 
 ## Prérequis
 
-- Java 17 ou supérieur  
+- Java 21 ou supérieur  
 - Gradle  
 
 ## Configuration des variables d'environnement
 
-Le projet utilise certaines variables sensibles qui doivent être définies dans un fichier `.env` à la racine du projet. Par exemple :
+Le projet utilise certaines variables sensibles définies dans un fichier `.env` à la racine du projet. Exemple :
+  ```bash
+    Clé secrète utilisée pour signer et vérifier les JWT
+    JWT_SECRET=MaCleSecreteUltraSecrete
 
-```env
-# Clé secrète utilisée pour signer et vérifier les JWT
-JWT_SECRET=MaCleSecreteUltraSecrete
+    Durée de validité du token JWT en millisecondes (ex: 1 jour = 86400000)
+    JWT_EXPIRATION_MS=86400000
 
-# Durée de validité du token JWT en millisecondes (ex: 1h = 3600000)
-JWT_EXPIRATION_MS=3600000
+    Base de données H2
+    DB_USERNAME=sa
+    DB_PASSWORD=your_secure_password
 
+    Utilisateur Spring Security par défaut
+      SECURITY_USER=admin
+      SECURITY_PASSWORD=adminpass
+  ```
 ## Installation et exécution
 
 1. Clonez le dépôt :
