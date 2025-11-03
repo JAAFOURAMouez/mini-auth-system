@@ -1,37 +1,48 @@
 # Mini-Plateforme Sécurisée de Gestion d'Utilisateurs et de Rôles
 
-Ce projet implémente une API REST sécurisée permettant de gérer des utilisateurs et leurs rôles, avec une authentification via JWT (JSON Web Token) et une gestion des autorisations basée sur les rôles.
+Ce projet implémente une API REST sécurisée permettant de gérer des utilisateurs et leurs rôles, avec authentification via JWT (JSON Web Token) et gestion des autorisations basée sur les rôles.
 
 ## Fonctionnalités
 
 ### Entités
 - **User** : id, nom, email, mot de passe (hashé), rôle
-- **Role** : id, nom (ex : ADMIN, USER)
+- **Role** : id, nom (ex : ROLE_ADMIN, ROLE_USER)
 
 ### Endpoints API
 
 #### API Publique (sans authentification)
-- **POST /api/auth/register** : Création d'un utilisateur avec rôle USER par défaut
+- **POST /api/auth/register** : Création d'un utilisateur avec rôle USER par défaut  
 - **POST /api/auth/login** : Authentification et obtention d'un token JWT
 
 #### API Sécurisée (authentification requise)
-- **GET /api/admin/users** : Consulter tous les utilisateurs (ADMIN uniquement)
-- **PUT /api/admin/users/{id}/role** : Modifier le rôle d'un utilisateur (ADMIN uniquement)
+- **GET /api/admin/users** : Consulter tous les utilisateurs (ADMIN uniquement)  
+- **PUT /api/admin/users/{id}/role** : Modifier le rôle d'un utilisateur (ADMIN uniquement)  
 - **GET /api/users/profile** : Consulter son propre profil (USER ou ADMIN)
 
 ## Technologies utilisées
 
-- **Spring Boot** : Framework Java pour le développement d'applications
-- **Spring Data JPA** : Pour la persistence des données avec Hibernate
-- **Spring Security** : Pour la sécurisation de l'API
-- **H2 Database** : Base de données en mémoire
-- **JSON Web Token (JWT)** : Pour l'authentification sans état
-- **BCrypt** : Pour le hachage sécurisé des mots de passe
+- **Spring Boot** : Framework Java pour le développement d'applications  
+- **Spring Data JPA** : Persistence des données avec Hibernate  
+- **Spring Security** : Sécurisation de l'API  
+- **H2 Database** : Base de données en mémoire  
+- **JSON Web Token (JWT)** : Authentification sans état  
+- **BCrypt** : Hachage sécurisé des mots de passe  
 
 ## Prérequis
 
-- Java 17 ou supérieur
-- Gradle
+- Java 17 ou supérieur  
+- Gradle  
+
+## Configuration des variables d'environnement
+
+Le projet utilise certaines variables sensibles qui doivent être définies dans un fichier `.env` à la racine du projet. Par exemple :
+
+```env
+# Clé secrète utilisée pour signer et vérifier les JWT
+JWT_SECRET=MaCleSecreteUltraSecrete
+
+# Durée de validité du token JWT en millisecondes (ex: 1h = 3600000)
+JWT_EXPIRATION_MS=3600000
 
 ## Installation et exécution
 
