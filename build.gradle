@@ -6,10 +6,15 @@ plugins {
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-
+// Use system JDK
 java {
-    sourceCompatibility = '17'
+    // no toolchain block
 }
+
+
+
+
+
 
 repositories {
     mavenCentral()

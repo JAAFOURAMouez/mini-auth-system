@@ -1,6 +1,6 @@
-.env
+
 *.properties
-!application-example.properties
+!*application.properties
 
 HELP.md
 .gradle
